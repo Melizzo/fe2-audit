@@ -8,7 +8,7 @@ const audit = {
 
     // What is the value of `this` when we call fn()?
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
 
     return result;
   },
@@ -31,7 +31,7 @@ const audit = {
 
     // What is the value of `this` when we call data.verify())?
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'nameOfObject';
 
     return result;
   },
@@ -54,7 +54,7 @@ const audit = {
 
     // What is the value of `this` when we call dog.bark();
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'instance of nameOfClassInstance';
 
     return result;
   },
@@ -92,9 +92,13 @@ const audit = {
     // Log D: greeting
     greetingGenerator();
 
-    const result = [{
+    const result = [
+      { 'A': 'hi'},
+      { 'B': 'hi'},
+      { 'C': 'hi'},
+      { 'D': 'welcome'}
       // 'ADD YOUR RESULT HERE';
-    }];
+    ];
 
     return result;
   },
@@ -122,9 +126,12 @@ const audit = {
 
     // Log D: shoe
 
-    const result = [{
-      // 'ADD YOUR RESULT HERE';
-    }];
+    const result = [
+      { 'A': 'heel'},
+      { 'B': 'boot'},
+      { 'C': 'heel'},
+      { 'D': 'boot'}
+    ];
 
     return result;
   },
@@ -174,7 +181,7 @@ const audit = {
     // e.g.
     // ['Beckon', 'El Five', 'ChoLon', 'Super Mega Bien']
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = restaurants.map(restaurant => restaurant.name);
 
     return result;
   },
@@ -228,7 +235,12 @@ const audit = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = return restaurants.map(restaurant => {
+      return {
+        restaurant: restaurant.name,
+        takeOut: restaurant.takeOut
+      };
+    };
 
     return result;
   },
@@ -282,7 +294,22 @@ const audit = {
     //    'Asian Fusion': ['ChoLon']
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = return restaurants.reduce((acc, restaurant) => {
+      restaurant.cusine.forEach(element => {
+        if(!acc[element]) {
+          acc[element] 
+        }
+          acc[element]
+      })
+  
+     return acc  
+    }, {});
+    // I couldn't get this to work - I want to push each restuarant into the the corresponding
+    // cusine key.  I'm didn't get a chance to try with forEach instead of Reduce. 
+    // always have trouble with returns! When, where!! 
+  }
+  
+  excerciseH();
 
     return result;
   },
